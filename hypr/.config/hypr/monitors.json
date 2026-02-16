@@ -1,0 +1,28 @@
+{
+  "workspaces": [
+    {
+      "name": "Default",
+      "monitors": {
+        "desc:Hewlett Packard HP 23xi 3CM349022W": {
+          "resolution": "1920x1080",
+          "refresh_rate": 60.0,
+          "scale": 1.0,
+          "rotation": 0,
+          "position_x": 1366,
+          "position_y": 0,
+          "is_primary": true
+        },
+        "eDP-1": {
+          "resolution": "1366x768",
+          "refresh_rate": 60.005,
+          "scale": 1.0,
+          "rotation": 0,
+          "position_x": 0,
+          "position_y": 0,
+          "is_primary": false
+        }
+      }
+    }
+  ],
+  "active_workspace": 0
+}
