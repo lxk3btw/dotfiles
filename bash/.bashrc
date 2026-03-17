@@ -47,9 +47,16 @@ alias ytplaylist='yt-dlp -x --audio-format mp3 --audio-quality 0 --embed-metadat
 # Download a YouTube Music Album
 alias ytalbum='yt-dlp -x --audio-format mp3 --audio-quality 0 --embed-metadata --embed-thumbnail --convert-thumbnails jpg --replace-in-metadata "playlist_uploader" " - Topic$" "" -o "~/Music/%(playlist_uploader|channel)s/%(playlist_title|album)s/%(playlist_index)02d - %(title)s.%(ext)s"'
 
-
-
-
+# Yazi quit in the current dir
+function y() {
+	local tmp cwd
+	tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	command yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd" || return
+	fi
+	rm -f -- "$tmp"
+}
 
 export PATH=$PATH:/home/lxk3/.spicetify
 export PATH=$PATH:~/.spicetify
