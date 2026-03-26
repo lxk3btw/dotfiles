@@ -28,6 +28,7 @@ compile_c() {
 # Create new aliases
 alias gcc='compile_c'
 alias c='clear'
+alias lg='lazygit'
 
 # # Download a single YouTube Music song with square album art
 # alias ytsong='yt-dlp -x --audio-format mp3 --audio-quality 0 --embed-metadata --embed-thumbnail --convert-thumbnails jpg --ppa "ThumbnailsConvertor+FFmpeg_o:-vf crop=in_h:in_h" -o "~/Music/%(artist)s - %(title)s.%(ext)s"'
