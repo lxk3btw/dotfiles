@@ -10,7 +10,10 @@ source ~/.local/share/omarchy/default/bash/rc
 # Make an alias for invoking commands you use constantly
 # alias p='python'
 
-. "$HOME/.local/share/../bin/env"
+# Only source the env file if it actually exists
+if [ -f "$HOME/.local/bin/env" ]; then
+    . "$HOME/.local/bin/env"
+fi
 
 
 # Remove the default 'c' alias for OpenCode
