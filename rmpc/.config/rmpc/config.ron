@@ -13,6 +13,7 @@
     enable_mouse: true,
     status_update_interval_ms: 1000,
     select_current_song_on_change: false,
+    lyrics_dir: "~/Music",
     album_art: (
         method: Auto,
         max_size_px: (width: 850, height: 850),
@@ -169,6 +170,13 @@
             pane: Split(
                 direction: Horizontal,
                 panes: [(size: "100%", borders: "ALL", pane: Pane(Search))],
+            ),
+        ),
+        (
+            name: "Lyrics",
+            pane: Split(
+                direction: Horizontal,
+                panes: [(size: "100%", borders: "ALL", pane: Pane(Lyrics))],
             ),
         ),
     ],
