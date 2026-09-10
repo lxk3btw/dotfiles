@@ -1,1 +1,1 @@
-/home/lxk3/.config/omarchy/current/theme/neovim.lua
+/home/lxk3/.local/state/omarchy/current/theme/neovim.lua

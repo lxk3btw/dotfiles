@@ -1,19 +1,19 @@
-# If not running interactively, don't do anything (leave this at the top of this file)
+# Omarchy environment (OMARCHY_PATH + PATH), needed even for non-interactive shells
+[[ -r /usr/share/omarchy/default/bash/env-bootstrap ]] && source /usr/share/omarchy/default/bash/env-bootstrap
+
+# If not running interactively, don't do anything else (leave this above the rc source)
 [[ $- != *i* ]] && return
 
 # All the default Omarchy aliases and functions
 # (don't mess with these directly, just overwrite them here!)
-source ~/.local/share/omarchy/default/bash/rc
+source "$OMARCHY_PATH/default/bash/rc"
 
 # Add your own exports, aliases, and functions here.
 #
 # Make an alias for invoking commands you use constantly
 # alias p='python'
 
-# Only source the env file if it actually exists
-if [ -f "$HOME/.local/bin/env" ]; then
-    . "$HOME/.local/bin/env"
-fi
+. "$HOME/.local/share/../bin/env"
 
 
 # Remove the default 'c' alias for OpenCode
@@ -41,8 +41,6 @@ alias obsync='~/.local/bin/obsidian-backup.sh'
 # # Download a YouTube Music Album with square album art
 # alias ytalbum='yt-dlp -x --audio-format mp3 --audio-quality 0 --embed-metadata --embed-thumbnail --convert-thumbnails jpg --ppa "ThumbnailsConvertor+FFmpeg_o:-vf crop=in_h:in_h" -o "~/Music/%(album_artist,artist)s/%(album,playlist)s/%(playlist_index)02d - %(title)s.%(ext)s"'
 
-
-
 # Download a single YouTube Music song
 alias ytsong='yt-dlp -x --audio-format mp3 --audio-quality 0 --embed-metadata --embed-thumbnail --convert-thumbnails jpg -o "~/Music/%(artist)s - %(title)s.%(ext)s"'
 
@@ -62,7 +60,3 @@ function y() {
 	fi
 	rm -f -- "$tmp"
 }
-
-export PATH=$PATH:/home/lxk3/.spicetify
-export PATH=$PATH:~/.spicetify
-export PATH=$PATH:~/.spicetify

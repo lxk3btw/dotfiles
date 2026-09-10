@@ -1,6 +1,5 @@
-# Machine-specific Hyprland configs
-hypr/.config/hypr/monitors.conf
-hypr/.config/hypr/monitors.json
-
 # Tmux plugins
 tmux/.config/tmux/plugins/
+
+# ignorar theming de omarchy 4
+nvim/.config/nvim/lua/plugins/theme.lua
