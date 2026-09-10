@@ -3,3 +3,10 @@ tmux/.config/tmux/plugins/
 
 # ignorar theming de omarchy 4
 nvim/.config/nvim/lua/plugins/theme.lua
+
+# lazy json
+nvim/.config/nvim/lazy-lock.json
+nvim/.config/nvim/lazyvim.json
+mpd/.config/mpd/database
+mpd/.config/mpd/pid
+mpd/.config/mpd/state
