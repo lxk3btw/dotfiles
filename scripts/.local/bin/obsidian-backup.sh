@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the path to your vault
-VAULT_DIR="$HOME/obsidianSync"
+VAULT_DIR="$HOME/Obsidian/"
 
 # Navigate to the vault
 cd "$VAULT_DIR" || exit
