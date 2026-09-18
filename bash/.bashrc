@@ -13,9 +13,6 @@ source "$OMARCHY_PATH/default/bash/rc"
 # Make an alias for invoking commands you use constantly
 # alias p='python'
 
-. "$HOME/.local/share/../bin/env"
-
-
 # Remove the default 'c' alias for OpenCode
 unalias c 2>/dev/null
 
