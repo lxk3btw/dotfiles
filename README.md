@@ -71,7 +71,7 @@ Instead of typing the command one by one, you can chain all your directories int
 
 ```
 cd ~/.dotfiles
-stow bash ghostty hyprland mpd nvim tmux zathura
+stow bash ghostty hyprland mpd nvim tmux zathura hyprland
 
 ```
 
