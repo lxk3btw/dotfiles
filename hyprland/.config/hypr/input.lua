@@ -7,7 +7,7 @@ hl.config({
 input = {
 
   kb_layout = "us,es",
-  kb_options = "caps:ctrl_modifier,altwin:swap_alt_win",
+  kb_options = "ctrl:swapcaps,altwin:swap_alt_win",
 
   -- Use a specific keyboard variant if needed (e.g. intl for international keyboards).
   -- kb_variant = "intl",
