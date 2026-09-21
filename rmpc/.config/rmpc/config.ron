@@ -36,6 +36,8 @@
             "3":       SwitchToTab("Artists"),
             "4":       SwitchToTab("Playlists"),
             "5":       SwitchToTab("Library"),
+            "6":       SwitchToTab("Search"),
+            "7":       SwitchToTab("Lyrics"),
             "F":       SwitchToTab("Search"),
             "q":       Quit,
             ">":       NextTrack,
