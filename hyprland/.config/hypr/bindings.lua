@@ -18,7 +18,6 @@ hl.unbind("SUPER + LEFT")
 hl.unbind("SUPER + RIGHT")
 hl.unbind("SUPER + SHIFT + LEFT")
 hl.unbind("SUPER + SHIFT + RIGHT")
-hl.unbind("SUPER + SHIFT + O")
 hl.unbind("SUPER + SHIFT + S")
 hl.unbind("SUPER + CTRL + L")
 hl.unbind("SUPER + CTRL + H")
@@ -28,8 +27,8 @@ hl.unbind("SUPER + code:19")
 -- 2. APPLICATION & SCRIPT BINDINGS (o.bind)
 -- -----------------------------------------------------------------------------
 -- Terminal & Files
-o.bind("SUPER + SHIFT + K", "Show keybindings", "omarchy-menu-keybindings")
 o.bind("SUPER + SHIFT + S", "Toggle layout (Scrolling/Normal)", "omarchy-hyprland-workspace-layout-toggle")
+o.bind("SUPER + SHIFT + K", "Show keybindings", "omarchy-menu-keybindings")
 o.bind("SUPER + RETURN", "Terminal", 'uwsm-app -- xdg-terminal-exec --dir="$(omarchy-cmd-terminal-cwd)"')
 o.bind("SUPER + SHIFT + F", "File manager", "uwsm-app -- nautilus --new-window")
 o.bind("SUPER + ALT + SHIFT + F", "File manager (cwd)", 'uwsm-app -- nautilus --new-window "$(omarchy-cmd-terminal-cwd)"')
@@ -44,9 +43,14 @@ o.bind("SUPER + Y", "YouTube", 'omarchy-launch-webapp "https://youtube.com/"')
 o.bind("SUPER + SHIFT + ALT + G", "WhatsApp", 'omarchy-launch-or-focus-webapp WhatsApp "https://web.whatsapp.com/"')
 
 -- Launchers & System Utilities
-o.bind("SUPER + P", "Pop Window (Toggle Float + Pin)", "sh -c 'hyprctl dispatch togglefloating && hyprctl dispatch pin'")
-o.bind("SUPER + SHIFT + O", "Toggle workspace layout", "omarchy-hyprland-workspace-layout-toggle")
-o.bind("SUPER + SHIFT + L", "Lock system", "omarchy-lock-screen")
+hl.bind("SUPER + S", hl.dsp.layout("togglesplit"))
+hl.bind("SUPER + SHIFT + L", hl.dsp.exec_cmd("omarchy-lock-screen"), { description = "Lock system" })
+hl.bind("SUPER + P", function()
+    hl.dispatch(hl.dsp.window.float({ action = "toggle" }))
+    hl.dispatch(hl.dsp.window.pin())
+    hl.dispatch(hl.dsp.window.resize({ x = 200, y = 200 }))
+    hl.dispatch(hl.dsp.window.bring_to_top())
+end)
 
 -- -----------------------------------------------------------------------------
 -- 3. HYPRLAND DISPATCHERS (Focus, Window Swap & Layout)
@@ -63,9 +67,6 @@ hl.bind("SUPER + CTRL + H", hl.dsp.window.swap({ direction = "l" }))
 hl.bind("SUPER + CTRL + J", hl.dsp.window.swap({ direction = "d" }))
 hl.bind("SUPER + CTRL + K", hl.dsp.window.swap({ direction = "u" }))
 hl.bind("SUPER + CTRL + L", hl.dsp.window.swap({ direction = "r" }))
-
--- Alternar split en layout
-hl.bind("SUPER + S", hl.dsp.layout("togglesplit"))
 
 
 -- Mover el workspace ACTIVO actual al siguiente monitor (+1)
