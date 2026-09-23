@@ -3,7 +3,7 @@
 hl.monitor({
   output = "desc:Hewlett Packard HP 23xi 3CM349022W",
   mode = "1920x1080@60.00",
-  position = "1366x0",
+  position = "1366x-48",
   scale = 1.25,
   sdr_min_luminance = 0.2,
   sdr_max_luminance = 80,
