@@ -111,3 +111,11 @@ To ensure your music daemon starts automatically in the background:
    ```
 
 2. Open your music player interface (like `rmpc`) to verify it connected to the daemon successfully.
+
+**For Zathura**
+Install dependecies for Zathura to work properly with PDF files:
+
+   ```
+   sudo pacman -S zathura-pdf-mupdf
+   
+   ```
