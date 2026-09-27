@@ -1,6 +1,13 @@
 set recolor true
 set selection-clipboard clipboard
 
+# Hide status bar, input bar, and scrollbars by default
+set guioptions ""
+
+# Map Ctrl+J and Ctrl+K to navigate down/up a page
+map <C-j> navigate next
+map <C-k> navigate previous
+
 
 
 
