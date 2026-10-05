@@ -26,7 +26,7 @@ compile_c() {
 }
 
 # Create new aliases
-alias gcc='compile_c'
+alias gc='compile_c'
 alias c='clear'
 alias lg='lazygit'
 alias obsync='~/.local/bin/obsidian-backup.sh'
