@@ -21,21 +21,21 @@ hl.config({
     rounding = 9,
 
     -- --- OPACITY SETTINGS ---
-    active_opacity = 0.90,
-    inactive_opacity = 0.90,
-    fullscreen_opacity = 1.0,
+    -- active_opacity = 0.90,
+    -- inactive_opacity = 0.90,
+    -- fullscreen_opacity = 1.0,
 
     -- --- BLUR SETTINGS ---
-    blur = {
-      enabled = true,
-      size = 5,
-      passes = 3,
-      vibrancy = 0.1696,
-    },
+    -- blur = {
+    --   enabled = true,
+    --   size = 5,
+    --   passes = 3,
+    --   vibrancy = 0.1696,
+    -- },
 
     -- Dim unfocused windows (0.0 = no dim, 1.0 = fully dimmed).
     dim_inactive = true,
-    dim_strength = 0.15,
+    dim_strength = 0.30,
 
   },
 })
