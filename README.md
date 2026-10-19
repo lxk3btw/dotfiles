@@ -116,6 +116,6 @@ To ensure your music daemon starts automatically in the background:
 Install dependecies for Zathura to work properly with PDF files:
 
    ```
-   sudo pacman -S zathura-pdf-mupdf
+   sudo pacman -S mupdf
    
    ```

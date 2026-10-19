@@ -1,6 +1,7 @@
 -- BEGIN hyprmoncfg wake settings
 -- Shared with Omarchy while hyprmoncfg manages displays.
-hl.monitor({ output = "eDP-1", mode = "2880x1800@120", position = "0x0", scale = 1.75 })
+-- hl.monitor({ output = "eDP-1", mode = "2880x1800@120", position = "0x0", scale = 1.75 })
+hl.monitor({ output = "eDP-1", mode = "highrr", position = "0x0", scale = 1.75 })
 -- END hyprmoncfg wake settings
 -- See https://wiki.hypr.land/Configuring/Basics/Monitors/
 -- List current monitors and supported resolutions with: hyprctl monitors all

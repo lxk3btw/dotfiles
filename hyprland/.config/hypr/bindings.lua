@@ -23,24 +23,37 @@ hl.unbind("SUPER + CTRL + L")
 hl.unbind("SUPER + CTRL + H")
 hl.unbind("SUPER + code:19")
 
+-- Unbind new workspace keys to prevent overlapping with system defaults
+hl.unbind("SUPER + M")
+hl.unbind("SUPER + SHIFT + M")
+hl.unbind("SUPER + G")
+hl.unbind("SUPER + SHIFT + G")
+hl.unbind("SUPER + U")
+hl.unbind("SUPER + SHIFT + U")
+hl.unbind("SUPER + I")
+hl.unbind("SUPER + SHIFT + I")
+hl.unbind("SUPER + Y")
+hl.unbind("SUPER + SHIFT + Y")
+hl.unbind("SUPER + E")
+hl.unbind("SUPER + SHIFT + E")
+hl.unbind("SUPER + Q")
+hl.unbind("SUPER + SHIFT + Q")
+
 -- -----------------------------------------------------------------------------
 -- 2. APPLICATION & SCRIPT BINDINGS (o.bind)
 -- -----------------------------------------------------------------------------
 -- Terminal & Files
 o.bind("SUPER + SHIFT + S", "Toggle layout (Scrolling/Normal)", "omarchy-hyprland-workspace-layout-toggle")
 o.bind("SUPER + SHIFT + K", "Show keybindings", "omarchy-menu-keybindings")
-o.bind("SUPER + RETURN", "Terminal", 'uwsm-app -- xdg-terminal-exec --dir="$(omarchy-cmd-terminal-cwd)"')
+o.bind("SUPER + RETURN", "Terminal", [[uwsm-app -- xdg-terminal-exec --dir="$(omarchy-cmd-terminal-cwd)"]])
 o.bind("SUPER + SHIFT + F", "File manager", "uwsm-app -- nautilus --new-window")
-o.bind("SUPER + ALT + SHIFT + F", "File manager (cwd)", 'uwsm-app -- nautilus --new-window "$(omarchy-cmd-terminal-cwd)"')
+o.bind("SUPER + ALT + SHIFT + F", "File manager (cwd)", [[uwsm-app -- nautilus --new-window "$(omarchy-cmd-terminal-cwd)"]])
 
 -- Apps & Webapps
 o.bind("SUPER + B", "Browser", "omarchy-launch-browser")
 o.bind("SUPER + SHIFT + B", "Browser (private)", "omarchy-launch-browser --private")
 o.bind("SUPER + N", "Editor", "omarchy-launch-editor")
-o.bind("SUPER + SHIFT + D", "Docker", "omarchy-launch-tui lazydocker")
-o.bind("SUPER + O", "Obsidian", 'omarchy-launch-or-focus ^obsidian$ "uwsm-app -- obsidian -disable-gpu --enable-wayland-ime"')
-o.bind("SUPER + Y", "YouTube", 'omarchy-launch-webapp "https://youtube.com/"')
-o.bind("SUPER + SHIFT + ALT + G", "WhatsApp", 'omarchy-launch-or-focus-webapp WhatsApp "https://web.whatsapp.com/"')
+o.bind("SUPER + O", "Obsidian", [[omarchy-launch-or-focus ^obsidian$ "uwsm-app -- obsidian -disable-gpu --enable-wayland-ime"]])
 
 -- Launchers & System Utilities
 hl.bind("SUPER + S", hl.dsp.layout("togglesplit"))
@@ -68,10 +81,26 @@ hl.bind("SUPER + CTRL + J", hl.dsp.window.swap({ direction = "d" }))
 hl.bind("SUPER + CTRL + K", hl.dsp.window.swap({ direction = "u" }))
 hl.bind("SUPER + CTRL + L", hl.dsp.window.swap({ direction = "r" }))
 
-
 -- Mover el workspace ACTIVO actual al siguiente monitor (+1)
 hl.bind("SUPER + SHIFT + CTRL + l", hl.dsp.workspace.move({ monitor = "+1" }))
 
+-- -----------------------------------------------------------------------------
+-- 4. CUSTOM LETTER WORKSPACES
+-- -----------------------------------------------------------------------------
+-- Switch to custom named workspaces
+hl.bind("SUPER + M", hl.dsp.focus({ workspace = "name:M" }))
+hl.bind("SUPER + G", hl.dsp.focus({ workspace = "name:G" }))
+hl.bind("SUPER + U", hl.dsp.focus({ workspace = "name:U" }))
+hl.bind("SUPER + I", hl.dsp.focus({ workspace = "name:I" }))
+hl.bind("SUPER + Y", hl.dsp.focus({ workspace = "name:Y" }))
+hl.bind("SUPER + E", hl.dsp.focus({ workspace = "name:E" }))
+hl.bind("SUPER + Q", hl.dsp.focus({ workspace = "name:Q" }))
 
-
-
+-- Move active window to custom named workspaces
+hl.bind("SUPER + SHIFT + M", hl.dsp.window.move({ workspace = "name:M" }))
+hl.bind("SUPER + SHIFT + G", hl.dsp.window.move({ workspace = "name:G" }))
+hl.bind("SUPER + SHIFT + U", hl.dsp.window.move({ workspace = "name:U" }))
+hl.bind("SUPER + SHIFT + I", hl.dsp.window.move({ workspace = "name:I" }))
+hl.bind("SUPER + SHIFT + Y", hl.dsp.window.move({ workspace = "name:Y" }))
+hl.bind("SUPER + SHIFT + E", hl.dsp.window.move({ workspace = "name:E" }))
+hl.bind("SUPER + SHIFT + Q", hl.dsp.window.move({ workspace = "name:Q" }))
