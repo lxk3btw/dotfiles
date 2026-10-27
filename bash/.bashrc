@@ -57,3 +57,6 @@ function y() {
 	fi
 	rm -f -- "$tmp"
 }
+
+. "$HOME/.local/share/../bin/env"
+. "$HOME/.cargo/env"
