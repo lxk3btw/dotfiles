@@ -60,3 +60,5 @@ function y() {
 
 . "$HOME/.local/share/../bin/env"
 . "$HOME/.cargo/env"
+
+export PATH=$PATH:/home/lxk3/.spicetify

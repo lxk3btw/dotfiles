@@ -38,6 +38,10 @@ hl.unbind("SUPER + E")
 hl.unbind("SUPER + SHIFT + E")
 hl.unbind("SUPER + Q")
 hl.unbind("SUPER + SHIFT + Q")
+hl.unbind("SUPER + A")
+hl.unbind("SUPER + SHIFT + A")
+hl.unbind("SUPER + D")
+hl.unbind("SUPER + SHIFT + D")
 
 -- -----------------------------------------------------------------------------
 -- 2. APPLICATION & SCRIPT BINDINGS (o.bind)
@@ -70,6 +74,8 @@ end)
 -- Usando la API Lua nativa de Hyprland (`hl.bind` + `hl.dsp`)
 -- -----------------------------------------------------------------------------
 -- Mover foco de ventana (hjkl)
+hl.unbind("SUPER + M")
+hl.unbind("SUPER + SHIFT + M")
 hl.bind("SUPER + H", hl.dsp.focus({ direction = "l" }))
 hl.bind("SUPER + J", hl.dsp.focus({ direction = "d" }))
 hl.bind("SUPER + K", hl.dsp.focus({ direction = "u" }))
@@ -95,6 +101,8 @@ hl.bind("SUPER + I", hl.dsp.focus({ workspace = "name:I" }))
 hl.bind("SUPER + Y", hl.dsp.focus({ workspace = "name:Y" }))
 hl.bind("SUPER + E", hl.dsp.focus({ workspace = "name:E" }))
 hl.bind("SUPER + Q", hl.dsp.focus({ workspace = "name:Q" }))
+hl.bind("SUPER + A", hl.dsp.focus({ workspace = "name:A" }))
+hl.bind("SUPER + D", hl.dsp.focus({ workspace = "name:D" }))
 
 -- Move active window to custom named workspaces
 hl.bind("SUPER + SHIFT + M", hl.dsp.window.move({ workspace = "name:M" }))
