@@ -54,8 +54,8 @@ o.bind("SUPER + SHIFT + F", "File manager", "uwsm-app -- nautilus --new-window")
 o.bind("SUPER + ALT + SHIFT + F", "File manager (cwd)", [[uwsm-app -- nautilus --new-window "$(omarchy-cmd-terminal-cwd)"]])
 
 -- Apps & Webapps
-o.bind("SUPER + B", "Browser", "omarchy-launch-browser")
-o.bind("SUPER + SHIFT + B", "Browser (private)", "omarchy-launch-browser --private")
+o.bind("SUPER + B", "Zen Browser", "uwsm-app -- zen-browser")
+o.bind("SUPER + SHIFT + B", "Zen Browser (private)", "uwsm-app -- zen-browser --private-window")
 o.bind("SUPER + N", "Editor", "omarchy-launch-editor")
 o.bind("SUPER + O", "Obsidian", [[omarchy-launch-or-focus ^obsidian$ "uwsm-app -- obsidian -disable-gpu --enable-wayland-ime"]])
 
@@ -112,3 +112,10 @@ hl.bind("SUPER + SHIFT + I", hl.dsp.window.move({ workspace = "name:I" }))
 hl.bind("SUPER + SHIFT + Y", hl.dsp.window.move({ workspace = "name:Y" }))
 hl.bind("SUPER + SHIFT + E", hl.dsp.window.move({ workspace = "name:E" }))
 hl.bind("SUPER + SHIFT + Q", hl.dsp.window.move({ workspace = "name:Q" }))
+
+-- Dictation keys from before Alt + Space and Right Alt became the defaults.
+-- Remove these lines to give the keys back to applications.
+if o.dictation_installed and o.dictation_installed() then
+  o.bind("SUPER + CTRL + X", "Toggle dictation", "omarchy-dictation toggle")
+  o.bind_hold("F9", "Start dictation (push-to-talk)", "omarchy-dictation start", "Stop dictation (push-to-talk)", "omarchy-dictation stop")
+end
