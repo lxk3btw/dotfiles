@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Evaluar configuración de monitor en el parser Lua de Hyprland
+hyprctl eval 'hl.monitor({ output = "eDP-1", mode = "2880x1800@120", position = "0x0", scale = 1.75 })'
+
+# Activar performance mode
+if command -v powerprofilesctl &> /dev/null; then
+    powerprofilesctl set performance
+fi
+
+notify-send -u low "Display & Power" "2880x1800 @ 120Hz | Performance Mode"

@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# Función auxiliar: enfoca el workspace, lanza la app, y espera el tiempo indicado
+launch_in_ws() {
+    local ws="$1"
+    local wait_time="$2"
+    shift 2
+    hyprctl eval "hl.dispatch(hl.dsp.focus({ workspace = \"$ws\" }))" >/dev/null
+    "$@" >/dev/null 2>&1 &
+    sleep "$wait_time"
+}
+
+# 1 -> Zen Browser
+launch_in_ws "1" "3.0" uwsm-app -- zen-browser
+
+# 2 -> Ghostty con Tmux
+launch_in_ws "2" "1.0" uwsm-app -- ghostty -e tmux new-session -A -s main
+
+# A -> Anki
+launch_in_ws "name:A" "2.0" uwsm-app -- anki
+
+# M -> Spotify (Wayland nativo para respetar el scale 1.75)
+launch_in_ws "name:M" "2.0" uwsm-app -- spotify --enable-features=UseOzonePlatform --ozone-platform=wayland
+
+# G -> WhatsApp Web App (Chromium tarda en cold boot)
+launch_in_ws "name:G" "2.0" omarchy-launch-webapp https://web.whatsapp.com
+
+# U -> Google Calendar Web App
+launch_in_ws "name:U" "2.0" omarchy-launch-webapp https://calendar.google.com
+
+# Regresar el foco al workspace 1 al finalizar
+hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = "1" }))' >/dev/null
+
+notify-send -u low "Startup" "Aplicaciones ubicadas en sus workspaces"

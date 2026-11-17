@@ -19,10 +19,6 @@ resize-overlay = never
 gtk-toolbar-style = flat
 
 
-# Opacity lxk3
-background-opacity = 0.85
-background-blur = 15
-
 
 # Cursor styling
 cursor-style = "block"
@@ -45,3 +41,9 @@ mouse-scroll-multiplier = 0.95
 
 # Fix general slowness on hyprland (https://github.com/ghostty-org/ghostty/discussions/3224)
 async-backend = epoll
+
+# Opacity lxk3
+# background-opacity = 0.85
+# background-blur = 15
+background-opacity = 0.35
+background-blur = 15

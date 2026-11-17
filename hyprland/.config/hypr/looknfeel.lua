@@ -6,8 +6,8 @@ hl.config({
     -- No gaps between windows or borders.
     gaps_in = 6,
     gaps_out = 8,
-    border_size = 0,
-    -- border_size = 2,
+    -- border_size = 0,
+    border_size = 2,
 
     -- Change to niri-like side-scrolling layout.
     -- layout = "scrolling",
@@ -20,12 +20,12 @@ hl.config({
     -- Use round window corners.
     rounding = 9,
 
-    -- --- OPACITY SETTINGS ---
-    -- active_opacity = 0.90,
-    -- inactive_opacity = 0.90,
-    -- fullscreen_opacity = 1.0,
+    --- OPACITY SETTINGS ---
+    active_opacity = 0.94,
+    inactive_opacity = 0.94,
+    fullscreen_opacity = 1.0,
 
-    -- --- BLUR SETTINGS ---
+    --- BLUR SETTINGS ---
     -- blur = {
     --   enabled = true,
     --   size = 5,
@@ -35,7 +35,7 @@ hl.config({
 
     -- Dim unfocused windows (0.0 = no dim, 1.0 = fully dimmed).
     dim_inactive = true,
-    dim_strength = 0.30,
+    dim_strength = 0.15,
 
   },
 })

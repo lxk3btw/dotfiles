@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Evaluar configuración de monitor en el parser Lua de Hyprland (1200p @ 60Hz)
+hyprctl eval 'hl.monitor({ output = "eDP-1", mode = "1920x1200@60", position = "0x0", scale = 1.25 })'
+
+# Activar power-saver mode
+if command -v powerprofilesctl &> /dev/null; then
+    powerprofilesctl set power-saver
+fi
+
+notify-send -u low "Display & Power" "1200p @ 60Hz | Power Saver Mode"
